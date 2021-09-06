@@ -1,0 +1,25 @@
+{
+   "products": [
+        {
+          "itemname": "Umberella",
+          "price": 10000,
+          "image":"./Assets/img1.jpeg",
+          "qty":1,
+         "id": 1
+        },
+        {
+         "itemname": "Abstract",
+          "price": 5400,
+          "image":"./Assets/img2.jpg",
+          "qty":"",
+         "id": 2
+        },
+        {
+          "itemname": "Geometric",
+          "price": 9800,
+           "image":"./Assets/img3.jpg",
+           "qty":"",
+         "id": 3
+        }
+      ]
+}
