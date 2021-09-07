@@ -4,7 +4,7 @@
           "itemname": "Umberella",
           "price": 10000,
           "image":"./Assets/img1.jpeg",
-          "qty":1,
+          "qty":2,
          "id": 1
         },
         {
@@ -20,6 +20,41 @@
            "image":"./Assets/img3.jpg",
            "qty":"",
          "id": 3
+        },
+        {
+          "itemname": "Gautama-Buddha",
+          "price": 9800,
+           "image":"./Assets/img4.jpg",
+           "qty":"",
+         "id": 4
+        },
+        {
+          "itemname": "Imerging-Face",
+          "price": 9800,
+           "image":"./Assets/img5.jpg",
+           "qty":"",
+         "id": 5
+        },
+        {
+          "itemname": "Street-Play",
+          "price": 9800,
+           "image":"./Assets/img6.jpg",
+           "qty":"",
+         "id": 6
+        },
+        {
+          "itemname": "Face",
+          "price": 9800,
+           "image":"./Assets/img7.jpg",
+           "qty":"",
+         "id": 7
+        },
+        {
+          "itemname": "Evil-Plot",
+          "price": 9800,
+           "image":"./Assets/img8.jpg",
+           "qty":"",
+         "id": 8
         }
       ]
 }

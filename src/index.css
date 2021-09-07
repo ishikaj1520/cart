@@ -26,7 +26,7 @@
   margin: 6px;
 }
 .navbar Button:hover {
-  background-color: 	#D3D3D3;
+  background-color: #D3D3D3;
 }
 .content {
   max-width: 600px;
@@ -35,12 +35,12 @@
   padding: 20px;
   /* justify-content: space-between; */
   
-  display:inline-block;
+  display:inline;
 
 }
 .product-preview {
   padding: 10px 16px;
-  margin: 20px 50px 25px ;
+  margin: 20px 75px 25px ;
   border-bottom: 1px solid #fafafa;
   background-color:#F0F0F0;
   display:inline-block;
@@ -62,4 +62,19 @@
 }
 .product-preview button:hover{
   box-shadow: 1px 3px 5px #787878;
+}
+.modal-body .modal-preview{
+  background-color:#F0F0F0 ;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-body .modal-preview .modal-text{
+  font-size:15px;
+  /* margin:  20px 75px 25px; */
+  display:flex;
+  text-align: left;
+   top: 20px;
+  position: relative; 
 }

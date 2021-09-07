@@ -2,6 +2,7 @@ import { useState } from 'react';
 // import { IconContext } from 'react-icons';
 import {Button,Modal} from 'react-bootstrap';
 import {CgShoppingCart} from 'react-icons/cg';
+import {MdCancel} from 'react-icons/md';
 import ModalBody from './modalbody';
 const Navbar = () => {
     const [state,setstate]=useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
        <Button >Sign in</Button>
        <Button onClick={handleclick} ><CgShoppingCart  size="2em" color='white' />Cart</Button>
        <div className="cart" >
-        <Modal show={state.show} onHide={handleclick}>
+        <Modal show={state.show} onHide={handleclick} >
           <Modal.Header style={{textAlign:'left',margin:'0px',fontFamily: 'Abel',fontSize:'15px'}} closeButton>SHOPPING BAG</Modal.Header>  
           <Modal.Body><ModalBody/></Modal.Body>
           <Modal.Footer>
