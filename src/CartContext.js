@@ -3,9 +3,9 @@ import ModalBody from './components/modalbody';
 import Productlist from './components/productlist';
 export const CartContext=createContext();
 export const CartProvider=()=>{
-    const [cartItems,setCartItems]=useState([]);
+    const [cartItems,setCartItems]=useState({});
     return(
-        <CartContext.Provider value={[cartItems,setCartItems]}>
+        <CartContext.Provider value={cartItems}>
             <Productlist/>
             <ModalBody/>
         </CartContext.Provider>
