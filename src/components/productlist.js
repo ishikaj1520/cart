@@ -1,26 +1,22 @@
-// import { useState } from "react";
-
-const Productlist = ({products,addedproducts}) => {
-  // const [qty,setQty]=useState("");
-   const Handleclick=(id)=>{
-    let addedproduct = products.filter(product=> product.id === id)
-    //check if the action id exists in the addedItems
-   let existed_product= addedproducts.find(product=> id === product.id)
-   if(existed_product)
-   {
-      addedproduct.qty += 1;
-  }
-   else{
-      addedproduct.qty = 1;
-   }
-      
-     fetch('http://localhost:8000/products',{
-       method: 'PUT',
-       headers:{"Content-Type":"application/json"},
-       body:JSON.stringify(addedproduct)
-     })
-   }
+import { useContext} from "react";
+import { CartContext } from "../CartContext";
+const Productlist = ({products}) => {
+  const[cartItems,setCartItems]=useContext(CartContext);
+  const onAdd = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
+    // return (cartItems);
+  };
     return ( 
+      // <item.Provider value={cartItems}>
         <div className="product-list">
              {products.map((product)=>(
           <div className="product-preview" key={product.id}>
@@ -30,11 +26,13 @@ const Productlist = ({products,addedproducts}) => {
           <p><b>Price:₹{product.price}</b></p> 
           <button style={{
           'backgroundColor':'black','color':'white','cursor':'pointer','border':'1px solid black','fontSize':'11px','borderRadius':'5px','padding':'5px'}}
-          onclick={()=>Handleclick(product.id)}>Add to Cart</button>
+          onclick={()=>onAdd(product)}>Add to Cart</button>
           </div>
           ))}
+        
         </div>
+        // {/* </item.Provider> */}
      );
-}
- 
+};
+
 export default Productlist;
