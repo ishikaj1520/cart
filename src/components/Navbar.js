@@ -2,9 +2,9 @@ import { useState } from 'react';
 // import { IconContext } from 'react-icons';
 import {Button,Modal} from 'react-bootstrap';
 import {CgShoppingCart} from 'react-icons/cg';
-import {MdCancel} from 'react-icons/md';
+// import {MdCancel} from 'react-icons/md';
 import ModalBody from './modalbody';
-const Navbar = () => {
+const Navbar = ({cartItems}) => {
     const [state,setstate]=useState(false);
     const handleclick=()=>{
        setstate({show:!state.show});
@@ -19,7 +19,7 @@ const Navbar = () => {
        <div className="cart" >
         <Modal show={state.show} onHide={handleclick} >
           <Modal.Header style={{textAlign:'left',margin:'0px',fontFamily: 'Abel',fontSize:'15px'}} closeButton>SHOPPING BAG</Modal.Header>  
-          <Modal.Body><ModalBody/></Modal.Body>
+          <Modal.Body><ModalBody cartItems={cartItems}/></Modal.Body>
           <Modal.Footer>
               <Button style={{backgroundColor:'grey', border:'none'}}> Place Order</Button>
           </Modal.Footer>

@@ -1,14 +1,17 @@
- import {  useState } from "react";
+ import React from "react";
 import Productlist from "./productlist";
-import useFetch from "./useFetch";
-const Home = ()=>{
-const{data:products,isPending,error}=useFetch('http://localhost:8000/products')
+// import useFetch from "./useFetch";
+const Home = (props)=>{
+   const {products,onAdd}=props;
+// const{data:products,isPending,error}=useFetch('http://localhost:8000/products')
   return ( 
     <div className='home'>
-       { error && <div>{ error }</div> }
-      { isPending && <div>Loading...</div> }
-   {products && <Productlist products={products} />}
+       {/* { error && <div>{ error }</div> }
+      { isPending && <div>Loading...</div> } */}
+   {products.map((product)=>(<Productlist key={product.id} product={product} onAdd={onAdd}>
+      </Productlist>))}
     </div>
+
    );
 }
  
