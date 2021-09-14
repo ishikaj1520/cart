@@ -4,13 +4,7 @@ import data from './data/data';
 import {useState} from 'react';
 function App() {
   const {products}=data;
-  const[cartItems,setCartItems]=useState([{
-    itemname: "Imerging-Face",
-    price: 9800,
-     image:"./Assets/img5.jpg",
-    id: 5,
-    qty:1
-  }]);
+  const[cartItems,setCartItems]=useState([]);
   const onAdd = (product) => {
       // const[cartItems,setCartItems]=useContext(CartContext);
       const exist = cartItems.find((x) => x.id === product.id);

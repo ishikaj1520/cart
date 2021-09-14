@@ -45,7 +45,6 @@ const totalPrice = itemsPrice + taxPrice + shippingPrice;
             </div>
       </>
        )}
-           {/* <p><b>Total Amount:₹{total}</b></p> */}
     </div>
      );
 }
