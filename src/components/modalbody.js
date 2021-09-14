@@ -14,7 +14,7 @@ const shippingPrice = itemsPrice > 2000 ? 0 : 20;
 const totalPrice = itemsPrice + taxPrice + shippingPrice;
     return ( 
         <div className='modal-body'>
-        {cartItems.length==0 && <div>Cart is Empty</div>}
+        {cartItems.length===0 && <div>Cart is Empty</div>}
         {/* { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> } */}
          { cartItems.map((cartItem )=>(
@@ -23,16 +23,30 @@ const totalPrice = itemsPrice + taxPrice + shippingPrice;
           <img src={cartItem.image} alt="item-img"></img>
           <p>{cartItem.itemname}</p>
           <div  className='modal-text'>
-          <p><b> Price:₹{cartItem.price}  Qty:{cartItem.qty} </b></p>
+          <p><b> Price:₹{cartItem.price}  Qty:{cartItem.qty} </b>
           <button onClick={() => onAdd(cartItem)} className="add">
                 +
-          </button>
+          </button></p>
           </div>
           </div>
           ))}
+          
+        {cartItems.length !== 0 && (
+          <>
+            <hr></hr>
+            <div className="row">
+              <p>Items Price:{itemsPrice.toFixed(2)}</p>
+      
+              <p>Tax Price:{taxPrice.toFixed(2)}</p>
+
+              <p>Shipping Price:{shippingPrice.toFixed(2)}</p>
+
+            <p><strong>Total Price:{totalPrice.toFixed(2)}</strong></p>
+            </div>
+      </>
+       )}
            {/* <p><b>Total Amount:₹{total}</b></p> */}
-     </div>
+    </div>
      );
 }
 export default ModalBody;
-// {()=>handleclick(product.price,product.qty)}

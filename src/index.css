@@ -44,10 +44,13 @@
   display:grid;
   grid-template-columns: auto auto auto;
 
+
 }
 .product-preview {
+  width:250px;
   padding: 10px 16px;
-  margin: 20px 75px 25px ;
+  margin:10px;
+  /* margin: 20px 75px 25px ; */
   border-bottom: 1px solid #fafafa;
   background-color:#F0F0F0;
   /* display:inline-block; */
@@ -76,15 +79,20 @@
 .modal-body .modal-preview{
   background-color:#F0F0F0 ;
   width:100%;
+  height:auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin:5px;
 }
 .modal-body .modal-preview .modal-text{
   font-size:15px;
   /* margin:  20px 75px 25px; */
   display:flex;
-  text-align: left;
+  text-align: right;
    top: 20px;
   position: relative; 
+}
+.modal-body .row{
+  text-align: center;
 }
